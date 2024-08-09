@@ -22,3 +22,7 @@ ml_project/
 ├── users.db
 ├── requiirements.txt
 └── README.md
+
+
+Login with username as Admin to get admin previlages.
+Run Streamlit run main.py in command prompt.
