@@ -62,7 +62,7 @@ def login_page():
             if authenticate_user(username, password):
                 st.session_state.logged_in = True
                 st.session_state.username = username
-                st.session_state.is_admin = username == "Srihari"  # Example check for admin role
+                st.session_state.is_admin = username == "Admin"  # Example check for admin role
                 st.session_state.page = "main"
             else:
                 st.error("Invalid username or password")
