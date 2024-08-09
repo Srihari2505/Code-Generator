@@ -5,15 +5,20 @@ ml_project/
 │   ├── main.py
 │   ├── pages/
 │   │   ├── __init__.py
-│   │   ├── code_generator.py
+│   │   ├── admin_page.py
+|   |   ├── code_generator.py
 │   │   ├── profile.py
-│   │   └── other.py
+│   │   ├── login.py
+|   |   ├── mainpage.py
+|   |   └── report_page.py
 │   ├── utils/
 │   │   ├── __init__.py
-│   │   └── helpers.py
-│   └── assets/
-│       ├── logo.png
-│       └── default_profile_pic.png
+│   │   └── api.py
+│   └── database/
+│       ├── init.py
+|       ├── user.py
+│       └── users.db
 │
 ├── users.db
+├── requiirements.txt
 └── README.md
