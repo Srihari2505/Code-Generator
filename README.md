@@ -1,2 +1,14 @@
-# Code-Generator
-An AI-powered web app that generates code using the Gemini API. Features a sleek, comic book-themed UI, Firebase authentication for user profiles, and a fully responsive design built with Tailwind CSS.
+Intelligent Code AssistantWelcome to the Intelligent Code Assistant, a dynamic web application designed to enhance the coding experience for developers. This project leverages the power of Google's Gemini AI to generate code snippets in real-time, all within a sleek, modern interface with a unique comic book theme.✨ Core FeaturesAI-Powered Code Generation: Utilizes the Gemini API to generate code in multiple languages based on user prompts.User Authentication: Secure user login and profile management handled by Firebase Authentication.Persistent Profiles: User data such as name, socials, and contacts are stored and managed using Firestore, allowing for a personalized experience.Dynamic & Responsive UI: A visually engaging single-page application built with Tailwind CSS, featuring a unique "comic book" aesthetic with animations and a fully responsive layout for all devices.Interactive Feedback System: Users can submit feedback, which is stored in Firestore for review.Client-Side Rendering: A seamless user experience with hash-based routing that doesn't require page reloads.🛠️ Tech StackThis project is built with a modern, serverless architecture:Frontend: HTML5, Tailwind CSS, Vanilla JavaScript (ESM)Backend-as-a-Service (BaaS):Google Firebase: Used for authentication (Auth) and database (Firestore).Artificial Intelligence:Google Gemini API: For all code generation capabilities.🚀 Getting StartedTo get a local copy up and running, follow these simple steps.PrerequisitesYou need a Firebase project and a Google AI API key to run this application.Firebase Setup:Go to the Firebase Console and create a new project.In your project, enable Authentication (you can start with Anonymous or Google sign-in).Enable Firestore Database.Go to Project Settings and copy your Firebase configuration object.InstallationClone the repo:git clone [https://github.com/your-username/intelligent-code-assistant.git](https://github.com/your-username/intelligent-code-assistant.git)
+
+Navigate to the project directory:cd intelligent-code-assistant
+
+Configure Firebase:Open the index.html file.Find the firebaseConfig object in the <script type="module"> section.Replace the placeholder values with your actual Firebase project configuration.const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+Run the application:Since this is a simple HTML file, you can open it directly in your web browser. For a better experience and to avoid potential CORS issues with local development, it's recommended to use a simple local server like live-server for VS Code.📄 LicenseThis project is licensed under the MIT License - see the LICENSE.md file for details.Happy Coding!
