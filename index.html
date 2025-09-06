@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Code Assistant</title>
+    <meta name="description" content="Generate code snippets, manage your profile, and enhance your coding experience with the power of Code Llama.">
+    <meta name="keywords" content="code generation, programming, LLM, profile management">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <h1>🧠 Intelligent Code Assistant</h1>
+            </div>
+            <div class="navbar-menu">
+                <a href="#" class="nav-link" data-page="main">Home</a>
+                <a href="#" class="nav-link" data-page="code-generator">Code Generator</a>
+                <a href="#" class="nav-link" data-page="profile">Profile</a>
+                <a href="#" class="nav-link" data-page="feedback">Feedback</a>
+                <button id="auth-btn" class="btn btn--primary auth-btn">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="app-container" class="app-container">
+        
+        <!-- Main Page -->
+        <div id="main-page" class="page active">
+            <div class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Welcome to the Future of Coding! 🚀</h2>
+                        <p class="hero-text">Welcome to the Intelligent Code Assistant, where coding meets convenience and efficiency. Our application leverages the power of Code Llama to assist you in generating code snippets, managing your profile, and enhancing your programming experience. With real-time suggestions and a user-friendly interface, we aim to make coding smoother and more productive for developers of all skill levels.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="images-section">
+                <div class="container">
+                    <div class="images-grid">
+                        <div class="image-card">
+                            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/93c43fd7-0207-4741-afb5-4fbf438d9b1f.png" alt="Modern coding interface illustration" />
+                        </div>
+                        <div class="image-card">
+                            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/f7db12c0-36fc-4f47-abc3-e2e4b14c76ad.png" alt="AI programming collaboration illustration" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="container">
+                    <h3>📊 Your Coding Dashboard</h3>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="dashboard-icon">🚀</div>
+                            <h4>Code Generations</h4>
+                            <p class="dashboard-number" id="user-code-count">0</p>
+                            <p class="dashboard-label">Total AI-generated code snippets</p>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="dashboard-icon">⏱️</div>
+                            <h4>Session Time</h4>
+                            <p class="dashboard-number" id="session-time">0m</p>
+                            <p class="dashboard-label">Time spent coding today</p>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="dashboard-icon">🎯</div>
+                            <h4>Languages Used</h4>
+                            <p class="dashboard-number" id="languages-used">0</p>
+                            <p class="dashboard-label">Different programming languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="container">
+                    <h3>✨ Amazing Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
+                            <h4>AI-Powered Generation</h4>
+                            <p>Powered by Google's Gemini AI for intelligent, context-aware code generation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌐</div>
+                            <h4>12 Programming Languages</h4>
+                            <p>Support for Python, JavaScript, TypeScript, Java, C++, C#, Go, PHP, Ruby, Swift, Kotlin, and Rust.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Professional Quality</h4>
+                            <p>Generate production-ready code with proper comments, error handling, and best practices.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h4>Secure & Private</h4>
+                            <p>Your code and data are processed securely with enterprise-grade privacy protection.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4>Responsive Design</h4>
+                            <p>Works perfectly on desktop, tablet, and mobile devices with our responsive interface.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <h4>Modern UI/UX</h4>
+                            <p>Beautiful, intuitive interface designed for maximum productivity and user satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-section">
+                <div class="container">
+                    <h3>💎 Professional Plans</h3>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Free Tier</h4>
+                                <div class="pricing-price">$0<span>/month</span></div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">✓ 10 AI code generations/day</div>
+                                <div class="pricing-feature">✓ 5 programming languages</div>
+                                <div class="pricing-feature">✓ Basic code templates</div>
+                                <div class="pricing-feature">✓ Community support</div>
+                            </div>
+                            <button class="btn btn--outline btn--full-width">Current Plan</button>
+                        </div>
+                        <div class="pricing-card pricing-card--featured">
+                            <div class="pricing-badge">Most Popular</div>
+                            <div class="pricing-header">
+                                <h4>Pro Developer</h4>
+                                <div class="pricing-price">$29<span>/month</span></div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">✓ Unlimited AI generations</div>
+                                <div class="pricing-feature">✓ All 12 programming languages</div>
+                                <div class="pricing-feature">✓ Advanced code analysis</div>
+                                <div class="pricing-feature">✓ Priority support</div>
+                                <div class="pricing-feature">✓ Export to IDE</div>
+                            </div>
+                            <button class="btn btn--primary btn--full-width">Upgrade Now</button>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Enterprise</h4>
+                                <div class="pricing-price">$99<span>/month</span></div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">✓ Everything in Pro</div>
+                                <div class="pricing-feature">✓ Team collaboration</div>
+                                <div class="pricing-feature">✓ Custom AI models</div>
+                                <div class="pricing-feature">✓ API access</div>
+                                <div class="pricing-feature">✓ Dedicated support</div>
+                            </div>
+                            <button class="btn btn--outline btn--full-width">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Generator Page -->
+        <div id="code-generator-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>🧑‍💻 Code Generator</h2>
+                    <p>Tell us what you want to code, and we'll generate it for you!</p>
+                </div>
+
+                <div class="code-generator-form">
+                    <div class="form-group">
+                        <label class="form-label" for="prompt_input">✍️ Enter Your Prompt</label>
+                        <textarea id="prompt_input" class="form-control" rows="4" placeholder="Describe what code you want to generate..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="platform_dropdown">🛠️ Select Programming Language</label>
+                        <select id="platform_dropdown" class="form-control">
+                            <option value="">Choose a language...</option>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="TypeScript">TypeScript</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                            <option value="C#">C#</option>
+                            <option value="Go">Go</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Swift">Swift</option>
+                            <option value="Kotlin">Kotlin</option>
+                            <option value="Rust">Rust</option>
+                        </select>
+                    </div>
+
+                    <button id="generate-btn" class="btn btn--primary btn--full-width">🚀 GENERATE CODE</button>
+                </div>
+
+                <div id="response_box" class="response-box hidden">
+                    <div class="response-header">
+                        <h4>📋 Generated Code</h4>
+                        <button id="copy-btn" class="btn btn--secondary btn--sm">Copy to Clipboard</button>
+                    </div>
+                    <div id="loading" class="loading hidden">
+                        <div class="loading-spinner"></div>
+                        <p class="loading-text">Generating your code...</p>
+                    </div>
+                    <pre id="code-output"><code></code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>👤 Profile Management</h2>
+                    <p>Manage your personal information and preferences</p>
+                </div>
+
+                <div class="profile-form">
+                    <div class="profile-photo-section">
+                        <div class="photo-preview" id="photo-preview">
+                            <span class="photo-placeholder">📷</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="profile_photo">Profile Photo</label>
+                            <input type="file" id="profile_photo" class="form-control" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="profile-fields">
+                        <div class="form-group">
+                            <label class="form-label" for="name">👤 Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">📧 Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="socials">🌐 Social Links</label>
+                            <input type="text" id="socials" class="form-control" placeholder="LinkedIn, Twitter, GitHub...">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="contacts">📱 Contact Information</label>
+                            <input type="text" id="contacts" class="form-control" placeholder="Phone, website...">
+                        </div>
+
+                        <div class="profile-actions">
+                            <button id="save-profile" class="btn btn--primary">💾 Save Profile</button>
+                            <button id="logout-btn" class="btn btn--outline">🚪 Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Page -->
+        <div id="feedback-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>💬 Share Your Feedback</h2>
+                    <p>Help us improve by sharing your thoughts and suggestions</p>
+                </div>
+
+                <div class="feedback-form">
+                    <div class="form-group">
+                        <label class="form-label" for="feedback_input">✍️ Your Feedback</label>
+                        <textarea id="feedback_input" class="form-control" rows="6" placeholder="Share your experience, suggestions, or report issues..."></textarea>
+                    </div>
+
+                    <button id="submit-feedback" class="btn btn--primary btn--full-width">📤 Submit Feedback</button>
+
+                    <div id="feedback-success" class="feedback-success hidden">
+                        <div class="success-message">
+                            <h4>🎉 Thank You!</h4>
+                            <p>Your feedback has been submitted successfully. We appreciate your input!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Page -->
+        <div id="admin-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>⚙️ Admin Dashboard</h2>
+                    <p>Manage users and view system data</p>
+                </div>
+
+                <div class="admin-content">
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <h4>👥 Total Users</h4>
+                            <p id="total-users">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>📝 Code Generations</h4>
+                            <p id="code-generations">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>💬 Feedback Messages</h4>
+                            <p id="feedback-count">0</p>
+                        </div>
+                    </div>
+
+                    <div class="users-table">
+                        <h3>User Management</h3>
+                        <div class="table-container">
+                            <table id="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-tbody">
+                                    <!-- Users will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content login-modal-content">
+                <div class="modal-header">
+                    <h3>🔐 Welcome to IntelCodeBot</h3>
+                    <p class="login-subtitle">Your AI-Powered Code Generation Assistant</p>
+                    <button id="close-modal" class="btn btn--outline btn--sm">✖</button>
+                </div>
+                <div class="modal-body">
+                    <div class="login-features">
+                        <div class="login-feature">
+                            <span class="feature-icon">🤖</span>
+                            <span>AI-Powered Code Generation</span>
+                        </div>
+                        <div class="login-feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>12 Programming Languages</span>
+                        </div>
+                        <div class="login-feature">
+                            <span class="feature-icon">🎯</span>
+                            <span>Professional Quality Code</span>
+                        </div>
+                    </div>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label class="form-label" for="login-email">📧 Email Address</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="login-password">🔒 Password</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">🚀 Start Coding with AI</button>
+                    </form>
+                    <div class="login-help">
+                        <h4>Demo Credentials:</h4>
+                        <div class="demo-accounts">
+                            <div class="demo-account">
+                                <strong>Admin Account:</strong><br>
+                                Email: admin@example.com<br>
+                                Password: admin123
+                            </div>
+                            <div class="demo-account">
+                                <strong>User Account:</strong><br>
+                                Email: user@example.com<br>
+                                Password: user123
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
